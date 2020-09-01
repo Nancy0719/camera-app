@@ -4,7 +4,8 @@ var constraints = { video: { facingMode: "user" }, audio: false };
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger")
+    cameraTrigger = document.querySelector("#camera--trigger"),
+    returnArrow = document.getElementById("return_arrow")
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
@@ -26,6 +27,11 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
     cameraTrigger.innerText = "Confirm";
     cameraTrigger.classList.add("complete");
+    returnArrow.classList.add("display");
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+
+returnArrow.onclick = function(){
+	window.addEventListener("load", cameraStart, false);
+}
