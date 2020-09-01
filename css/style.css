@@ -50,6 +50,7 @@ html, body{
 
 .display{
 	display: inline-block;
+	z-index:999;
 }
 
 
